@@ -69,9 +69,12 @@ const data=[
 ]
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(databaseConnection(mongoClient));
+ app.use(databaseConnection(mongoClient));
 app.get('/', (req, res) => {
-  res.send('Hello, World!');
+  res.status(200).send('Hello, World!');
+});
+app.get('/data', (req, res) => {
+  res.status(200).send(data);
 });
 app.post('/insert', async (req, res) => {
   try {
