@@ -72,7 +72,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(databaseConnection(mongoClient));
 app.get('/', (req, res) => {
   res.send('Hello, World!');
-  console.log("check for fog")
 });
 app.post('/insert', async (req, res) => {
   try {
